@@ -1,0 +1,5 @@
+.bandContainer{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: minmax(200px, 1fr) minmax(500px, 1fr);
+}

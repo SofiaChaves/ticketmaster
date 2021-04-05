@@ -1,0 +1,9 @@
+.title {
+    font-size: 1.7em;
+    margin-bottom: 5px;
+}
+.rectangle{
+    background-color:black;
+    width:29px;
+    height:6px
+}

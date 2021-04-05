@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import Title from "../Layout/Title/title"
 import ErrorMessage from "./ErrorMessage/errorMessage"
 import Textbox from "./Textbox/textbox"
 import styles from "./waitingList.module.css"
@@ -49,8 +50,7 @@ const WaitingList = () => {
 
   return (
     <form onSubmit={submit}>
-      <h1 className={styles.title}>Waiting List</h1>
-      <div className={styles.rectangle} />
+      <Title>Waiting List</Title>
       <p className={styles.text} data-testid="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
       {isSuccessBoxVisible ?
         <div className={styles.successBox} data-testid="successMessage">

@@ -1,7 +1,4 @@
-.title {
-    font-size: 1.7em;
-    margin-bottom: 5px;
-}
+
 
 .text {
     font-size: 1em;
@@ -13,12 +10,6 @@
     color: white;
     border: none;
     border-radius: 0.2em;
-}
-
-.rectangle{
-    background-color:black;
-    width:29px;
-    height:6px
 }
 
 .successBox {

@@ -1,8 +1,12 @@
 .container {
   min-height: 100vh;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .grid{
   display: grid;
+  height: 100%;
   grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
 }

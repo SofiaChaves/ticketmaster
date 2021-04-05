@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Band from '../components/Band/band'
 import Nav from '../components/Layout/Nav/nav'
 import WaitingList from '../components/WaitingList/waitingList'
 import styles from '../styles/Home.module.css'
@@ -12,7 +13,7 @@ export default function Home() {
       </Head>
       <Nav/>
       <div className={styles.grid}>
-        <div></div>
+        <Band/>
         <WaitingList />
       </div>
       

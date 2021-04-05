@@ -1,0 +1,8 @@
+.about{
+    background-color: var(--color-blue-lighter);
+    padding: 2.5em 4em;
+}
+.about p {
+    margin-top: 2em;
+    line-height: 1.5em;
+}
