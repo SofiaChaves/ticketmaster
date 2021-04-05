@@ -1,0 +1,9 @@
+.nav{
+    width: 100vw;
+    background-color: var(--color-blue);
+    background-image: linear-gradient(90deg, var(--color-blue-darker), var(--color-blue), var(--color-blue-darker));
+    padding: 1.8em 2em;
+}
+.logo {
+    height: 32px;
+}

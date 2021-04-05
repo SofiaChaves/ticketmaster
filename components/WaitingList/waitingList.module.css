@@ -1,0 +1,29 @@
+.title {
+    font-size: 1.7em;
+    margin-bottom: 5px;
+}
+
+.text {
+    font-size: 1em;
+}
+
+.btn {
+    background-color: #026CDF;
+    padding: 10px;
+    color: white;
+    border: none;
+    border-radius: 0.2em;
+}
+
+.rectangle{
+    background-color:black;
+    width:29px;
+    height:6px
+}
+
+.successBox {
+    background-color: #eae9f9;
+    padding: 1.5em;
+    font-size: 1em;
+    color: black;
+}
