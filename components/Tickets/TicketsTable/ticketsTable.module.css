@@ -1,0 +1,48 @@
+.ticketsTable{
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    margin: 2em 0;
+    border-radius: 0.7em;
+    border: 1px solid var(--color-blue-lighter);
+}
+
+/* rows */
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 1.4em;
+    border-bottom: 1px solid var(--color-blue-lighter);
+}
+.row:last-of-type {
+    border-bottom: none;
+}
+.row.disabled{
+    opacity: 0.5;
+}
+
+/* text */
+.row h2{
+    font-weight: 400;
+    margin: 0 0 0.5em;
+}
+.row span{
+    color: var(--color-blue);
+}
+
+/* buttons */
+.row button{
+    background-color: var(--color-blue);
+    color: white;
+    border: none;
+    font-size: 1em;
+    padding: 1em 1.7em;
+    border-radius: 4px;
+}
+.row.disabled button{
+    background-color: var(--color-blue-lighter);
+    color: black;
+}

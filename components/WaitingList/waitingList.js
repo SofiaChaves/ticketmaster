@@ -5,25 +5,27 @@ import Textbox from "./Textbox/textbox"
 import styles from "./waitingList.module.css"
 
 const WaitingList = () => {
-  let isComplete = null;
 
   const [errorMessage, setErrorMessage] = useState();
   const [isSuccessBoxVisible, setIsSuccessBoxVisible] = useState(false);
 
   const clearErrorMessage = () => setErrorMessage(null);
-
+  
   const submit = async event => {
     event.preventDefault()
     setErrorMessage(null);
 
+    // getting fields
     var email = event.target?.elements["email"]?.value;
     var phone = event.target?.elements["phone"]?.value;
 
+    //verifying if any of the fields is empty
     if (!email || !phone){
         setErrorMessage("Email and mobile number must be provided");
         return;
     }
 
+    //POST of form
     const res = await fetch(
       '/api/waiting-list',
       {
@@ -38,6 +40,7 @@ const WaitingList = () => {
       }
     )
 
+    //handling result, displaying result to user
     const result = await res.json()
     if (res.status != 200) {
       setErrorMessage(result?.message);
@@ -52,9 +55,10 @@ const WaitingList = () => {
     <form onSubmit={submit}>
       <Title>Waiting List</Title>
       <p className={styles.text} data-testid="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
+      
       {isSuccessBoxVisible ?
         <div className={styles.successBox} data-testid="successMessage">
-          <p>You have successfully been added to the waitting list. You will receive an email confirming into email@outlook.com</p>
+          You have successfully been added to the waitting list. You will receive an email confirming your registration.
         </div>
       : 
         <div>
@@ -64,6 +68,7 @@ const WaitingList = () => {
           <button className={styles.btn} type="submit" data-testid="submit">Get into waiting list</button>
         </div>
       }
+      
     </form>
   );
 }

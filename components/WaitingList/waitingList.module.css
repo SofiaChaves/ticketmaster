@@ -1,20 +1,14 @@
-
-
-.text {
-    font-size: 1em;
-}
-
 .btn {
-    background-color: #026CDF;
-    padding: 10px;
-    color: white;
+    background-color: var(--color-blue);
+    padding: 1em 1.5em;
     border: none;
-    border-radius: 0.2em;
+    border-radius: 4px;
+    font-size: 1em;
+    color: white;
 }
 
 .successBox {
-    background-color: #eae9f9;
-    padding: 1.5em;
+    background-color: var(--color-blue-lighter);
+    padding: 3em;
     font-size: 1em;
-    color: black;
 }

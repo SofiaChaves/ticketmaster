@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Band from '../components/Band/band'
 import Nav from '../components/Layout/Nav/nav'
+import Tickets from '../components/Tickets/tickets'
 import WaitingList from '../components/WaitingList/waitingList'
 import styles from '../styles/Home.module.css'
 
@@ -14,7 +15,12 @@ export default function Home() {
       <Nav/>
       <div className={styles.grid}>
         <Band/>
-        <WaitingList />
+        <div style={{padding: '2.5em 4em'}}>
+          <Tickets/>
+          <hr/>
+          <WaitingList />
+
+        </div>
       </div>
       
     </div>

@@ -1,9 +1,15 @@
 .title {
     font-size: 1.7em;
-    margin-bottom: 5px;
+    margin-bottom: 0.3em;
+}
+.title.xlTitle{
+    font-size: 2.7em;
+}
+.title.xlTitle ~ .rectangle{
+    width:6em;    
 }
 .rectangle{
     background-color:black;
-    width:29px;
-    height:6px
+    width:2.5em;
+    height:0.35em;
 }

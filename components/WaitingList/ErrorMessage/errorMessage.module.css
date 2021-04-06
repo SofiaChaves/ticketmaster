@@ -1,8 +1,8 @@
 .container {
-    background-color: #ff7373;
-    padding: 10px;
-    font-size: 0.7em;
+    background-color: var(--color-red);
+    min-width: 360px;
+    max-width: 50%;
+    margin-bottom: 1em;
+    padding: 1em;
     color: white;
-    min-width: 50%;
-    max-width: 95%;
 }
