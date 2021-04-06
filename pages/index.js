@@ -12,15 +12,18 @@ export default function Home() {
         <title>TicketMaster</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
+
       <Nav/>
       <div className={styles.grid}>
+
         <Band/>
-        <div style={{padding: '2.5em 4em'}}>
+        
+        <div className={styles.ticketsWrapper}>
           <Tickets/>
           <hr/>
           <WaitingList />
-
         </div>
+
       </div>
       
     </div>

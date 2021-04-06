@@ -8,6 +8,7 @@ describe("waiting list component", () => {
     let expectedEmail, expectedPhone;
     let alreadyAddedText, fieldsMissingText;
 
+    //setting up test subjects
     beforeEach(()=>{
         expectedEmail = "sofia@test.net";
         expectedPhone = "07100123456";
@@ -16,6 +17,7 @@ describe("waiting list component", () => {
         fetch.mockClear();
     });
 
+    //test for missing email when submitting form
     test("missing email", async () => {
         const {getByText, getByTestId} = render(<WaitingList />);
         const submit = getByTestId("submit");
@@ -28,8 +30,10 @@ describe("waiting list component", () => {
             fireEvent.click(submit);
         })
 
+        //verifying that any api call was made
         expect(fetch).not.toHaveBeenCalled();
 
+        //making sure it is displaying error message
         const error = getByText(fieldsMissingText);
         expect(error).toBeVisible();
         expect(email).toBeVisible();
@@ -37,6 +41,7 @@ describe("waiting list component", () => {
         expect(submit).toBeVisible();
     });
 
+    //test for missing phone field when submitting form
     test("missing phone", async () => {
 
         const {getByText, getByTestId} = render(<WaitingList />);
@@ -49,9 +54,11 @@ describe("waiting list component", () => {
             fireEvent.change(phone, {target: {value: ""}});
             fireEvent.click(submit);
         })
-
+        
+        //verifying that any api call was made
         expect(fetch).not.toHaveBeenCalled();
 
+        //making sure it is displaying error message
         const error = getByText(fieldsMissingText);
         expect(error).toBeVisible();
         expect(email).toBeVisible();
@@ -59,8 +66,10 @@ describe("waiting list component", () => {
         expect(submit).toBeVisible();
     });
 
+    //test for in case of success
     test("success", async () => {
 
+        //fetch mock for 200
         fetch.mockImplementationOnce(() => Promise.resolve({
             status: 200,
             json: () => Promise.resolve({
@@ -79,8 +88,10 @@ describe("waiting list component", () => {
             fireEvent.click(submit);
         })
 
+        //verifying that only 1 api call was made
         expect(fetch).toHaveBeenCalledTimes(1);
 
+        //making sure it is displaying success message
         const successMessage = getByTestId("successMessage");
         expect(successMessage).toBeVisible();
         expect(email).not.toBeVisible();
@@ -88,8 +99,10 @@ describe("waiting list component", () => {
         expect(submit).not.toBeVisible();
   });
 
+    //email already exists test
     test("already registered", async () => {
 
+        //fetch mock for 400
         fetch.mockImplementationOnce(() => Promise.resolve({
             status: 400,
             json: () => Promise.resolve({
@@ -109,8 +122,10 @@ describe("waiting list component", () => {
             fireEvent.click(submit);
         })
 
+        //verifying that only 1 api call was made
         expect(fetch).toHaveBeenCalledTimes(1);
 
+        //making sure it is displaying error message
         const error = getByText(alreadyAddedText);
         expect(error).toBeVisible();
         expect(email).toBeVisible();

@@ -56,6 +56,7 @@ const WaitingList = () => {
       <Title>Waiting List</Title>
       <p className={styles.text} data-testid="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
       
+      {/* switching between success message and form */}
       {isSuccessBoxVisible ?
         <div className={styles.successBox} data-testid="successMessage">
           You have successfully been added to the waitting list. You will receive an email confirming your registration.

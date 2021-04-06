@@ -41,8 +41,10 @@
     font-size: 1em;
     padding: 1em 1.7em;
     border-radius: 4px;
+    cursor: pointer;
 }
 .row.disabled button{
     background-color: var(--color-blue-lighter);
     color: black;
+    cursor: not-allowed;
 }
